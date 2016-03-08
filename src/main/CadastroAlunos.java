@@ -10,6 +10,8 @@ public class CadastroAlunos {
 			
 	public static void main(String[] args) {
 		Aluno al = null;
+		
+		System.out.println("Ola usuario!");
 	
 		for (int i = 0; i < 2; i++) {
 			System.out.println(" Informe o nome do aluno: ");
