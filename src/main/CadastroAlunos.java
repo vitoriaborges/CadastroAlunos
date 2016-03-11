@@ -13,7 +13,7 @@ public class CadastroAlunos {
 		
 		System.out.println("Ola usuario!");
 	
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 3; i++) {
 			System.out.println(" Informe o nome do aluno: ");
 			al = new Aluno(sc.next());
 			System.out.println(" Informe o numero da matricula: ");
@@ -25,13 +25,47 @@ public class CadastroAlunos {
 			
 		}
 		
-		for(Aluno a: listaAlunos){
-			System.out.println(a);
+		//mostraAlunos();
+		//buscaAlunos();
+		
+		System.out.println("Informe um nome para pesquisa: ");
+		String nomeParaPesquisa = sc.next();
+		buscaAlunos(nomeParaPesquisa);
+		
+	}		
+
+	
+		public static void mostraAlunos(){
+			for(Aluno a: listaAlunos){				
+				System.out.println(a);
+			}
+		}
+			
+		
+		public static void buscaAlunos(){
+			System.out.println(" Informe sua matricula para pesquisa: ");
+			String busca = sc.next();
+			for(Aluno al: listaAlunos){
+				if(busca.equalsIgnoreCase(al.getMatricula())){
+					System.out.println(" Encontrei a matricula que voce procurava! ");
+					System.out.println(al);
+				}
+			}
 		}
 		
-		
-		
-	}
+		public static ArrayList<Aluno> buscaAlunos(String nome){
+			
+			ArrayList<Aluno> resultado = new ArrayList<Aluno>();
+			
+			for(Aluno ao: listaAlunos){
+				if(ao.getNome().equalsIgnoreCase(nome)){
+					System.out.println(" pessoa ");
+					System.out.println(ao);
+				}
+			}
+			
+			return resultado;			
 
+		}
+		
 }
-
